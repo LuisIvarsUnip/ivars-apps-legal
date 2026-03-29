@@ -1,2 +1,2 @@
-# uplift-legal
-Legal pages for Uplift apps (Privacy Policy, EULA)
+# ivars-apps-legal
+Legal pages for Ivars Apps (Privacy Policy, EULA)
