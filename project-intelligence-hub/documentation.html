@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — Project Intelligence Hub for Jira</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #172B4D; line-height: 1.7; padding: 40px 20px; max-width: 860px; margin: 0 auto; }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    h2 { font-size: 22px; margin: 36px 0 14px; color: #172B4D; border-bottom: 2px solid #F4F5F7; padding-bottom: 8px; }
+    h3 { font-size: 17px; margin: 24px 0 10px; color: #172B4D; }
+    p, li { font-size: 15px; margin-bottom: 10px; }
+    ul, ol { padding-left: 24px; }
+    code { background: #F4F5F7; padding: 2px 6px; border-radius: 3px; font-size: 14px; }
+    .meta { color: #6B778C; font-size: 13px; margin-bottom: 32px; }
+    a { color: #0065FF; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 14px; }
+    th { background: #F4F5F7; text-align: left; padding: 10px 12px; font-weight: 600; }
+    td { padding: 10px 12px; border-bottom: 1px solid #F4F5F7; }
+    .step { background: #F4F5F7; border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
+    .step-num { display: inline-block; background: #0052CC; color: #fff; width: 28px; height: 28px; border-radius: 50%; text-align: center; line-height: 28px; font-weight: 600; font-size: 14px; margin-right: 10px; }
+    .faq-q { font-weight: 600; color: #172B4D; margin-top: 16px; }
+    .faq-a { color: #42526E; margin-bottom: 16px; }
+    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #DFE1E6; color: #6B778C; font-size: 13px; }
+    .badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+    .badge-green { background: #E3FCEF; color: #006644; }
+    .badge-amber { background: #FFF7E6; color: #FF991F; }
+    .badge-red { background: #FFEBE6; color: #DE350B; }
+  </style>
+</head>
+<body>
+  <h1>Project Intelligence Hub for Jira</h1>
+  <p class="meta">User Guide &amp; Documentation &bull; Version 2.5.0</p>
+
+  <p><strong>Project Intelligence Hub for Jira</strong> turns live Jira project data into stakeholder-ready reports in one click. Generate professional status reports, release notes, and executive dashboards directly from your Jira project — then export to PDF, push to Confluence, or copy to the clipboard.</p>
+
+  <h2>How It Works</h2>
+  <p>The app runs inside Jira as a project-level page. Open it from any project, pick a report template, and the app builds the report from your live Jira data — issues, sprints, epics, versions, and team activity. You can review and edit the report before exporting.</p>
+
+  <h2>Getting Started</h2>
+
+  <div class="step">
+    <span class="step-num">1</span>
+    <strong>Install the App</strong><br>
+    Install Project Intelligence Hub for Jira from the Atlassian Marketplace onto your Jira Cloud instance.
+  </div>
+
+  <div class="step">
+    <span class="step-num">2</span>
+    <strong>Open the App</strong><br>
+    Navigate to any Jira project and click <strong>"Project Intelligence Hub"</strong> in the project navigation.
+  </div>
+
+  <div class="step">
+    <span class="step-num">3</span>
+    <strong>Pick a Report Template</strong><br>
+    Choose one of the seven templates. Most generate instantly; <strong>Release Notes</strong> asks you to pick a project version first.
+  </div>
+
+  <div class="step">
+    <span class="step-num">4</span>
+    <strong>Review and Edit</strong><br>
+    The report is built from live Jira data. Edit summary fields, status messages, and notes inline before sharing.
+  </div>
+
+  <div class="step">
+    <span class="step-num">5</span>
+    <strong>Export</strong><br>
+    Export to <strong>PDF</strong>, push directly to <strong>Confluence</strong>, or copy formatted <strong>HTML</strong> to the clipboard.
+  </div>
+
+  <h2>The 7 Report Templates</h2>
+  <table>
+    <tr><th>Template</th><th>Description</th></tr>
+    <tr><td>Weekly Status Report</td><td>Progress this week, highlights, blockers, next-week focus and team summary — with auto RAG status</td></tr>
+    <tr><td>Release Notes</td><td>Categorized changelog (new features, improvements, bug fixes, security) built from a Jira version</td></tr>
+    <tr><td>Project Cockpit</td><td>Executive dashboard with RAG across dimensions, milestone tracker, key metrics and top risks</td></tr>
+    <tr><td>RAID Log</td><td>Risks, Actions, Issues and Decisions register for project governance</td></tr>
+    <tr><td>Steering Committee Report</td><td>Leadership report with accomplishments, schedule, risks and next-period plan</td></tr>
+    <tr><td>Sprint Retrospective</td><td>Committed vs delivered, velocity trend, carry-over and team contribution</td></tr>
+    <tr><td>Team Performance Dashboard</td><td>Cross-sprint velocity, member performance, cycle time, backlog health and quality metrics</td></tr>
+  </table>
+
+  <h2>Key Features</h2>
+
+  <h3>Automatic RAG Status</h3>
+  <p>Reports that include a health indicator calculate it automatically from your Jira data:</p>
+  <ul>
+    <li><span class="badge badge-green">On Track</span> — Progressing as planned</li>
+    <li><span class="badge badge-amber">At Risk</span> — Needs attention, potential delays</li>
+    <li><span class="badge badge-red">Off Track</span> — Action required, significant issues</li>
+  </ul>
+  <p>The status is derived from overdue issues, blockers, and sprint progress. You can override it manually at any time.</p>
+
+  <h3>Story-Point Velocity</h3>
+  <p>The app detects your instance's Story Points custom field automatically and uses it to calculate velocity in the Weekly Status, Sprint Retrospective and other reports. If your project does not use story points, velocity falls back to issue counts.</p>
+
+  <h3>Export Options</h3>
+  <ul>
+    <li><strong>PDF</strong> — A polished, print-ready document for email or archiving</li>
+    <li><strong>Confluence</strong> — Push the report directly to a Confluence space and page of your choice</li>
+    <li><strong>Clipboard (HTML)</strong> — Copy formatted content to paste into email, docs, or chat</li>
+  </ul>
+
+  <h3>Project Settings</h3>
+  <p>Use the <strong>Settings</strong> panel to set the client name, project manager, and a custom footer that appears on exported reports.</p>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <p class="faq-q">Which Jira project types are supported?</p>
+  <p class="faq-a">Both company-managed and team-managed projects on Jira Cloud. Sprint-based reports require a Scrum or Kanban board.</p>
+
+  <p class="faq-q">Where do story points come from?</p>
+  <p class="faq-a">The app scans your Jira field registry for the "Story Points" or "Story Point Estimate" field and uses it automatically. No manual configuration is needed.</p>
+
+  <p class="faq-q">Does the app store my Jira data?</p>
+  <p class="faq-a">No. Reports are generated on demand from live Jira data. The app only stores your project settings (client name, PM, footer) and anonymous usage counters in Atlassian's Forge storage.</p>
+
+  <p class="faq-q">Why does a report show zero velocity?</p>
+  <p class="faq-a">Either the project has no story points on its issues, or no "Story Points" field exists on the instance. Velocity then falls back to issue counts where applicable.</p>
+
+  <p class="faq-q">Can I push the same report to Confluence twice?</p>
+  <p class="faq-a">Yes. If a page with the same title already exists, the app appends a timestamp so nothing is overwritten.</p>
+
+  <p class="faq-q">Is it secure?</p>
+  <p class="faq-a">Yes. The app is built on Atlassian Forge and runs entirely within Atlassian's infrastructure. No data is sent to external servers.</p>
+
+  <h2>Support</h2>
+  <p>For questions, issues, or feature requests:</p>
+  <ul>
+    <li>Email: <a href="mailto:support@luisivars.pt">support@luisivars.pt</a></li>
+    <li>Hours: Monday to Friday, 9:00 — 18:00 GMT+1</li>
+  </ul>
+
+  <div class="footer">
+    &copy; 2026 Ivars Apps (Luis Ivars Unipessoal Lda). All rights reserved.
+  </div>
+</body>
+</html>
