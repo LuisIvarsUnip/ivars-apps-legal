@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — Issue Exporter for Jira - JQL Search &amp; Excel/CSV Export</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #172B4D; line-height: 1.7; padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    h2 { font-size: 20px; margin: 32px 0 12px; color: #172B4D; }
+    p, li { font-size: 15px; margin-bottom: 12px; }
+    ul, ol { padding-left: 24px; }
+    .meta { color: #6B778C; font-size: 13px; margin-bottom: 32px; }
+    a { color: #0065FF; }
+    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #DFE1E6; color: #6B778C; font-size: 13px; }
+    h2 { border-bottom: 2px solid #F4F5F7; padding-bottom: 8px; }
+    h3 { font-size: 17px; margin: 24px 0 10px; color: #172B4D; }
+    code { background: #F4F5F7; padding: 2px 6px; border-radius: 3px; font-size: 14px; }
+    .step { background: #F4F5F7; border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
+    .faq-q { font-weight: 600; color: #172B4D; margin-top: 16px; }
+    .faq-a { color: #42526E; margin-bottom: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Issue Exporter for Jira - JQL Search &amp; Excel/CSV Export</h1>
+  <p class="meta">User Guide &amp; Documentation</p>
+
+  <p>Issue Exporter for Jira lets you run any JQL query through Jira's own native editor — full field, operator, and value autocomplete included — then pick exactly which columns you want and export the results to CSV in one click. Everything happens client-side: the query executes via Jira REST v3 search reads, the table renders in your browser, and the CSV is generated locally. No issue data is ever sent to an external backend, no third-party server, no vendor hand-off. Saved queries and column layouts are stored per project so your team's most-used exports are always one click away.</p>
+
+  <h2>Overview</h2>
+  <p>Most Jira export apps are built around scheduling and migration hand-off to external tools — which means your issue data has to leave Atlassian and land on a third-party server before you ever see a file. Issue Exporter for Jira takes the opposite approach: it's a JQL-native exporter that keeps everything inside the boundary.
+
+Run any query through Jira's own JQL editor, with the same field, operator, and value autocomplete you already know. Matching issues load into a results table via Jira REST v3 search reads. Pick exactly which fields you want as columns — summary, status, assignee, priority, dates, or any custom field the search returns — and export that table to CSV with one click, generated entirely client-side.
+
+Save named JQL queries per project and re-run them instantly. Save your column layout too, so your export template is exactly the same next time you need it. No external egress, no vendor backend, no data leaving Atlassian — just fast, precise, repeatable exports.
+
+Scheduling and team-shared templates are on the roadmap once there's a clear case for a backend — for now, this app focuses on doing instant, accurate, trustworthy exports better than anyone who has to route your data through a third party.</p>
+
+  <h2>Key Features</h2>
+  <h3>Export in seconds, not spreadsheets of copy-paste</h3>
+  <p>Write or reuse a JQL query with native autocomplete, choose your columns, and download a CSV that matches exactly what's on screen — no manual re-formatting after the fact.</p>
+
+  <h3>Exports that match what you actually asked for</h3>
+  <p>The CSV mirrors the current result set and selected columns exactly, so there's no risk of exporting stale data, extra fields, or a mismatched query — what you see is what you get.</p>
+
+  <h3>Nothing leaves Atlassian's boundary</h3>
+  <p>Search, rendering, and CSV generation all happen in-browser with your Jira data — there's no external server or vendor backend in the loop, which matters for teams with data-residency or security review requirements.</p>
+
+  <h2>Frequently Asked Questions</h2>
+  <p class="faq-q">Does this app send my Jira issue data to an external server?</p>
+  <p class="faq-a">No. The JQL search, results rendering, and CSV generation all happen using Jira REST v3 reads and client-side processing in your browser — no issue data is transmitted to a third-party backend.</p>
+
+  <p class="faq-q">Can I schedule recurring exports?</p>
+  <p class="faq-a">Not yet. This app is focused on fast, accurate, on-demand exports first. Scheduling is a possible future addition once there's a real need for backend infrastructure.</p>
+
+  <p class="faq-q">Can I choose which fields appear in my export?</p>
+  <p class="faq-a">Yes. You select which columns appear in the results table — including custom fields returned by your search — and that exact layout is what gets exported to CSV.</p>
+
+  <p class="faq-q">Can I save and reuse my JQL queries?</p>
+  <p class="faq-a">Yes. Named queries and your column layout are saved per project and persist between sessions, so you can re-run a saved export in one click.</p>
+
+  <p class="faq-q">What export format is supported?</p>
+  <p class="faq-a">CSV, generated entirely in your browser from the current results table, ready to open in Excel or any spreadsheet tool.</p>
+
+  <h2>Support</h2>
+  <p>For questions, issues, or feature requests:</p>
+  <ul>
+    <li>Email: <a href="mailto:support@luisivars.pt">support@luisivars.pt</a></li>
+    <li>Hours: Monday to Friday, 9:00 - 18:00 GMT+1</li>
+  </ul>
+
+  <div class="footer">
+    &copy; 2026 Ivars Apps (Luis Ivars Unipessoal Lda). All rights reserved.
+  </div>
+</body>
+</html>
