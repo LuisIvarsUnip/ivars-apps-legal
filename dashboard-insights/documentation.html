@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — Dashboard Insights for Jira</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #172B4D; line-height: 1.7; padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    h2 { font-size: 20px; margin: 32px 0 12px; color: #172B4D; }
+    p, li { font-size: 15px; margin-bottom: 12px; }
+    ul, ol { padding-left: 24px; }
+    .meta { color: #6B778C; font-size: 13px; margin-bottom: 32px; }
+    a { color: #0065FF; }
+    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #DFE1E6; color: #6B778C; font-size: 13px; }
+    h2 { border-bottom: 2px solid #F4F5F7; padding-bottom: 8px; }
+    h3 { font-size: 17px; margin: 24px 0 10px; color: #172B4D; }
+    code { background: #F4F5F7; padding: 2px 6px; border-radius: 3px; font-size: 14px; }
+    .step { background: #F4F5F7; border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
+    .faq-q { font-weight: 600; color: #172B4D; margin-top: 16px; }
+    .faq-a { color: #42526E; margin-bottom: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Dashboard Insights for Jira</h1>
+  <p class="meta">User Guide &amp; Documentation</p>
+
+  <p>Dashboard gadgets for teams who want real Jira data, not a stripped-down summary — rendered fast and computed entirely inside Atlassian. Chart any saved JQL, track Agile flow metrics straight from the issue changelog, and get changelog-accurate Time in Status without waiting on an external service to respond.</p>
+
+  <h2>Overview</h2>
+  <p>Dashboards for Jira is a native gadget library for the Jira dashboard — not a separate reporting app. Each gadget is configured in standard gadget edit mode and computed live from your JQL.
+
+Chart library: bar, column, stacked, pie/donut, line, area, and pivot/two-dimensional tables, each driven by a saved filter or JQL.
+
+Agile flow, computed in Forge from the issue changelog and the Agile v1 API: burndown, burnup, cumulative flow diagram (CFD), velocity, and control chart.
+
+Time in Status: per-issue and aggregate time-in-status, cycle time, and lead time derived from the changelog, with working-calendar (business hours) support so off-hours don't count toward the total.
+
+Config panel: a React-based settings screen with a saved JQL/filter picker, grouping and segmentation field, date range, and color theming. Settings persist per gadget via Forge storage.
+
+Live refresh against Jira REST v3 and Agile v1, backed by a short-TTL result cache so gadgets render fast instead of re-querying on every dashboard load.
+
+Export: send a single chart to PNG or PDF, or export the underlying data set to CSV.
+
+Runs on Atlassian: 100% in-platform computation with zero external egress — every chart and metric stays inside your Atlassian cloud, which is what a security-reviewed enterprise buyer is checking for.</p>
+
+  <h2>Key Features</h2>
+  <h3>Dashboards that load, not spin</h3>
+  <p>A short-TTL Forge KVS cache and metrics-instrumented gadgets mean charts paint on first load instead of stalling while data comes in — no more waiting for a dashboard to catch up before a standup or review.</p>
+
+  <h3>Pass security review without extra questions</h3>
+  <p>Every chart, the Time in Status changelog crunching, and the result cache run inside Atlassian's Forge runtime — there's no external server, API key, or data pipeline to explain to your security team, and the Runs on Atlassian badge documents that for procurement.</p>
+
+  <h3>Cycle-time numbers you can defend in a retro</h3>
+  <p>Time in Status, cycle time, and lead time are calculated straight from the issue changelog, with optional working-calendar support, so a weekend doesn't inflate a 3-day 'In Progress' stint — the CFD, control chart, and velocity gadgets reuse the same data, so the numbers agree with each other.</p>
+
+  <h2>Frequently Asked Questions</h2>
+  <p class="faq-q">Does any of my Jira data leave Atlassian?</p>
+  <p class="faq-a">No. Every chart, the Time in Status changelog crunching, and the result cache run inside Forge on Atlassian's infrastructure — there's no external server or API endpoint for your data to pass through.</p>
+
+  <p class="faq-q">How is Time in Status different from just reading status change history?</p>
+  <p class="faq-a">It aggregates the changelog into per-issue and per-group time-in-status, cycle time, and lead time, with an optional working-calendar setting so nights and weekends don't count toward the total.</p>
+
+  <p class="faq-q">Will the gadgets work with my saved filters and JQL?</p>
+  <p class="faq-a">Yes — each gadget's config panel has a saved filter/JQL picker plus grouping and date-range controls, and the settings persist per gadget via Forge storage.</p>
+
+  <p class="faq-q">Can I get data out of a gadget, not just view it on a dashboard?</p>
+  <p class="faq-a">Yes, each chart can be exported to PNG or PDF, and its underlying data set can be exported to CSV.</p>
+
+  <p class="faq-q">What's the pricing model?</p>
+  <p class="faq-a">Pricing model: Free up to 10 users, per-user pricing from 11 users, billed via Atlassian, 30-day trial.</p>
+
+  <h2>Support</h2>
+  <p>For questions, issues, or feature requests:</p>
+  <ul>
+    <li>Email: <a href="mailto:support@luisivars.pt">support@luisivars.pt</a></li>
+    <li>Hours: Monday to Friday, 9:00 - 18:00 GMT+1</li>
+  </ul>
+
+  <div class="footer">
+    &copy; 2026 Ivars Apps (Luis Ivars Unipessoal Lda). All rights reserved.
+  </div>
+</body>
+</html>
