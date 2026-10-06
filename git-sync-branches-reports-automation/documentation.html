@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — Git Sync - Branches, Reports &amp; Automation for Jira</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #172B4D; line-height: 1.7; padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    h2 { font-size: 20px; margin: 32px 0 12px; color: #172B4D; }
+    p, li { font-size: 15px; margin-bottom: 12px; }
+    ul, ol { padding-left: 24px; }
+    .meta { color: #6B778C; font-size: 13px; margin-bottom: 32px; }
+    a { color: #0065FF; }
+    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #DFE1E6; color: #6B778C; font-size: 13px; }
+    h2 { border-bottom: 2px solid #F4F5F7; padding-bottom: 8px; }
+    h3 { font-size: 17px; margin: 24px 0 10px; color: #172B4D; }
+    code { background: #F4F5F7; padding: 2px 6px; border-radius: 3px; font-size: 14px; }
+    .step { background: #F4F5F7; border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
+    .faq-q { font-weight: 600; color: #172B4D; margin-top: 16px; }
+    .faq-a { color: #42526E; margin-bottom: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Git Sync - Branches, Reports &amp; Automation for Jira</h1>
+  <p class="meta">User Guide &amp; Documentation</p>
+
+  <p>Git Sync replaces guesswork with a provable system: branch names are generated from the exact naming format you saved for the project, and every branch, commit and PR tied to an issue shows up in a Jira-native report you can filter and export, not a panel that just claims everything is connected.</p>
+
+  <h2>Overview</h2>
+  <p>Many Git integrations for Jira ignore the branch naming format you saved and go quiet when something breaks, leaving you to guess whether a branch, commit or PR is actually linked to an issue. Git Sync is built to fix both problems directly. Naming conventions live in a settings panel: a branch prefix map by issue type, a separator character and a max slug length, all persisted per project in Forge storage. When you generate a branch name for an issue, it is built from that saved template every time, shown ready to select and copy, so the format never drifts between developers or projects. The reporting side lists every issue in the project next to the Git references parsed from a designated Jira field and remote issue links, filterable by status. A per-project activity report (issue key, status, assignee, linked branch count, last updated) is built from live Jira REST v3 reads, sortable by any column, and exportable as CSV. The current release reads from Jira and Forge storage only: no external GitHub connection, no external servers, no external egress. That keeps your settings and issue data inside Atlassian's trust boundary while still giving you reliable, transparent Git visibility on every issue.</p>
+
+  <h2>Key Features</h2>
+  <h3>Branch names that always match your format</h3>
+  <p>Every branch name is generated from the per-project template you saved in settings, prefix, separator and slug length included, so developers never have to manually fix an inconsistent branch name again.</p>
+
+  <h3>See every branch, commit and PR in one report</h3>
+  <p>Git references parsed from your Jira field and issue links show up in one sortable table per project, so you can confirm work is actually linked instead of trusting a panel that just says connected.</p>
+
+  <h3>Filter, sort and export your Git activity</h3>
+  <p>Filter the issue list by status, sort the activity report by any column, and export it as CSV for standups, audits or sharing outside Jira without rebuilding the data by hand.</p>
+
+  <h2>Frequently Asked Questions</h2>
+  <p class="faq-q">Does Git Sync need to connect to GitHub or another Git host?</p>
+  <p class="faq-a">No, the current release reads only from Jira REST v3 and Forge storage. Branch, commit and PR references are parsed from a designated Jira field and remote issue links, with no external connection required.</p>
+
+  <p class="faq-q">Can I customize the branch naming format per project?</p>
+  <p class="faq-a">Yes, the settings panel lets you set a branch prefix per issue type, a separator character and a max slug length, saved per project. The generator always applies this saved format.</p>
+
+  <p class="faq-q">Can I export the Git activity report?</p>
+  <p class="faq-a">Yes, the per-project activity report (issue key, status, assignee, linked branch count, last updated) can be exported as CSV directly from the table.</p>
+
+  <p class="faq-q">Where do the branch, commit and PR links come from?</p>
+  <p class="faq-a">They are parsed from a designated Jira field on each issue plus the issue's remote links, then shown alongside every issue in the project list, filterable by status.</p>
+
+  <p class="faq-q">Is my naming configuration stored outside Jira?</p>
+  <p class="faq-a">No, per-project naming conventions are stored in Forge KVS, which lives inside Atlassian's infrastructure alongside your Jira data.</p>
+
+  <h2>Support</h2>
+  <p>For questions, issues, or feature requests:</p>
+  <ul>
+    <li>Email: <a href="mailto:support@luisivars.pt">support@luisivars.pt</a></li>
+    <li>Hours: Monday to Friday, 9:00 - 18:00 GMT+1</li>
+  </ul>
+
+  <div class="footer">
+    &copy; 2026 Ivars Apps (Luis Ivars Unipessoal Lda). All rights reserved.
+  </div>
+</body>
+</html>
