@@ -30,7 +30,7 @@
     <li>JQL query results you run in the app</li>
     <li>Jira project metadata (project key, name)</li>
     <li>Current user identity (display name), used for the app UI</li>
-    <li>App configuration you save (e.g. saved queries and column layouts), stored in Atlassian Forge Storage (KVS)</li>
+    <li>App configuration you save (for example saved queries, column layouts or per-project settings), stored in Atlassian Forge Storage (KVS)</li>
   </ul>
 
   <h2>2. How Data is Processed</h2>
@@ -41,14 +41,17 @@
     <li>Does <strong>NOT</strong> transmit any data to external servers</li>
     <li>Does <strong>NOT</strong> use third-party analytics, tracking, or advertising services</li>
     <li>Does <strong>NOT</strong> collect, store, or process user credentials or API tokens</li>
+    <li>Keeps aggregated, anonymous usage counters through Atlassian's Forge metrics (for example the number of active users per day); these counters contain no personal data and never leave Atlassian</li>
   </ul>
 
   <h2>3. Data Storage</h2>
-  <p>The App stores minimal configuration data using <strong>Atlassian Forge Storage (KVS)</strong>, which is hosted and encrypted by Atlassian within your tenant's infrastructure:</p>
+  <p>The App stores the following in <strong>Atlassian Forge Storage (KVS)</strong>, which is hosted and encrypted by Atlassian within your tenant's infrastructure:</p>
   <ul>
-    <li>App configuration you save (e.g. saved queries and column layouts)</li>
+    <li>App configuration you save (for example saved queries, column layouts or per-project settings)</li>
+    <li>A per-user usage record that operates the App's in-app review prompt and measures adoption: your Atlassian account ID together with action counts, the dates of use and the prompt's state (shown, snoozed, reviewed). It holds no names, email addresses or issue content.</li>
+    <li>A short-lived cache of query results (at most 10 minutes) so repeated views load faster. Cache entries are keyed to the requesting user, are never shared between users and expire automatically.</li>
   </ul>
-  <p>No issue data or report content is permanently stored beyond this configuration; data used to render the app's views is read live from Jira and is not cached.</p>
+  <p>Beyond the items above, no issue data or report content is stored: the data used to render the App's views is read live from Jira on each request.</p>
 
   <h2>4. Data Sharing</h2>
   <p>We do <strong>NOT</strong> share, sell, rent, or disclose any of your data to third parties. The App has no sub-processors.</p>
@@ -64,8 +67,8 @@
   <p>We act as a <strong>Data Processor</strong> under the General Data Protection Regulation (GDPR). Atlassian acts as the infrastructure provider. Your organization remains the Data Controller.</p>
   <ul>
     <li>The App processes personal data only as necessary to provide its functionality (display names, assignee information)</li>
-    <li>No personal data is stored beyond the minimal configuration described above</li>
-    <li>Data subject access requests (DSAR) should be directed to your Atlassian site administrator</li>
+    <li>The only personal data the App stores is the per-user usage record described in section 3 (your Atlassian account ID with usage counts and dates); it is deleted together with the App</li>
+    <li>Data subject access requests (DSAR) should be directed to your Atlassian site administrator; uninstalling the App deletes all data it stored</li>
   </ul>
 
   <h2>8. Security</h2>
