@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — Capacity Planner for Jira - Team Allocation &amp; Availability</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #172B4D; line-height: 1.7; padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    h2 { font-size: 20px; margin: 32px 0 12px; color: #172B4D; }
+    p, li { font-size: 15px; margin-bottom: 12px; }
+    ul, ol { padding-left: 24px; }
+    .meta { color: #6B778C; font-size: 13px; margin-bottom: 32px; }
+    a { color: #0065FF; }
+    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #DFE1E6; color: #6B778C; font-size: 13px; }
+    h2 { border-bottom: 2px solid #F4F5F7; padding-bottom: 8px; }
+    h3 { font-size: 17px; margin: 24px 0 10px; color: #172B4D; }
+    code { background: #F4F5F7; padding: 2px 6px; border-radius: 3px; font-size: 14px; }
+    .step { background: #F4F5F7; border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
+    .faq-q { font-weight: 600; color: #172B4D; margin-top: 16px; }
+    .faq-a { color: #42526E; margin-bottom: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Capacity Planner for Jira - Team Allocation &amp; Availability</h1>
+  <p class="meta">User Guide &amp; Documentation</p>
+
+  <p>Capacity Planner for Jira turns assignees, estimates, sprint dates, and worklogs you already have into a single capacity heatmap: who's over-allocated, who has room, and where to rebalance, without buying or configuring a second app.</p>
+
+  <h2>Overview</h2>
+  <p>Most capacity-planning apps on the Marketplace quietly depend on a separate time-tracking app for their most useful features, and reviewers of those apps report that this requirement is buried, documentation is misleading, and demos are only available after purchase. Capacity Planner for Jira takes a different approach: every allocation and availability number comes from native Jira data alone (assignees, story points or original estimate, sprint dates, and Jira worklogs), so there's no second paid license required to see real numbers. The core of the app is the Team Capacity Heatmap, a dashboard gadget that renders per-person allocation versus availability across sprints or weeks as a color-coded (RAG) chart. Add it to any Jira dashboard to see, at a glance, who's over-allocated, who's under-allocated, and where the next sprint is at risk. When you spot a problem, rebalance it from the same view: form controls let you move or split an issue's allocation across people and periods, and every override is saved automatically (Forge KVS, storage:app, per gadget) so your plan persists between sessions. Configure the capacity model to match how your team actually works: set a working calendar, holidays, and a part-time or FTE factor per user, all computed inside Atlassian. For teams spread across many projects, the heatmap rolls up one person's load across every project and board they're on, covering the common case of a contractor or lead billable across 40 or more projects. Because every calculation and every saved plan stays inside Forge (KVS and @forge/api), with no external egress, Capacity Planner for Jira is Runs on Atlassian eligible: a data-residency and trust guarantee that externally hosted alternatives can't claim.</p>
+
+  <h2>Key Features</h2>
+  <h3>See overallocation before it causes burnout</h3>
+  <p>The heatmap shows who's over or under-allocated across sprints and projects in one view, so you catch capacity problems before they become missed deadlines or burnout.</p>
+
+  <h3>Rebalance without leaving the dashboard</h3>
+  <p>Split or move an issue's allocation across people and periods with form controls, saving the override instantly so replanning takes minutes, not a spreadsheet rebuild.</p>
+
+  <h3>Trust the numbers without a second license</h3>
+  <p>Every figure comes from native Jira data (assignees, estimates, sprint dates, worklogs), so you get real allocation vs availability numbers without buying or configuring another time-tracking app.</p>
+
+  <h2>Frequently Asked Questions</h2>
+  <p class="faq-q">Does this require a separate time-tracking app or any other paid app?</p>
+  <p class="faq-a">No. All allocation and availability numbers are calculated from native Jira data (assignees, estimates, sprint dates, worklogs). There's no second license to buy or configure.</p>
+
+  <p class="faq-q">Where does my data live?</p>
+  <p class="faq-a">Inside Forge: computation and storage use Forge's KVS and @forge/api only, with no external servers or egress. The app is Runs on Atlassian eligible.</p>
+
+  <p class="faq-q">Can I see one person's workload across multiple projects?</p>
+  <p class="faq-a">Yes. The heatmap rolls up a person's allocation across every project and board they're assigned to, so you see their total load in one chart instead of checking each project separately.</p>
+
+  <p class="faq-q">Can I adjust for part-time staff or holidays?</p>
+  <p class="faq-a">Yes. Set each user's FTE factor, working calendar, and holidays in the capacity model settings so availability reflects real working time.</p>
+
+  <p class="faq-q">What does pricing look like?</p>
+  <p class="faq-a">Free at launch.</p>
+
+  <h2>Support</h2>
+  <p>For questions, issues, or feature requests:</p>
+  <ul>
+    <li>Email: <a href="mailto:support@luisivars.pt">support@luisivars.pt</a></li>
+    <li>Hours: Monday to Friday, 9:00 - 18:00 GMT+1</li>
+  </ul>
+
+  <div class="footer">
+    &copy; 2026 Ivars Apps (Luis Ivars Unipessoal Lda). All rights reserved.
+  </div>
+</body>
+</html>
