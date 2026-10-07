@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — Project Cost Tracker - Budget &amp; Worklog Costs for Jira</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #172B4D; line-height: 1.7; padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    h2 { font-size: 20px; margin: 32px 0 12px; color: #172B4D; }
+    p, li { font-size: 15px; margin-bottom: 12px; }
+    ul, ol { padding-left: 24px; }
+    .meta { color: #6B778C; font-size: 13px; margin-bottom: 32px; }
+    a { color: #0065FF; }
+    .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #DFE1E6; color: #6B778C; font-size: 13px; }
+    h2 { border-bottom: 2px solid #F4F5F7; padding-bottom: 8px; }
+    h3 { font-size: 17px; margin: 24px 0 10px; color: #172B4D; }
+    code { background: #F4F5F7; padding: 2px 6px; border-radius: 3px; font-size: 14px; }
+    .step { background: #F4F5F7; border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
+    .faq-q { font-weight: 600; color: #172B4D; margin-top: 16px; }
+    .faq-a { color: #42526E; margin-bottom: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Project Cost Tracker - Budget &amp; Worklog Costs for Jira</h1>
+  <p class="meta">User Guide &amp; Documentation</p>
+
+  <p>Project Cost Tracker puts rates, budget and the full cost table on one project page in Jira. Set an hourly rate per teammate, set a project budget, and watch budget remaining, percent consumed and a red/amber/green status update automatically from real worklogs, with no separate app sections to hunt through.</p>
+
+  <h2>Overview</h2>
+  <p>Most Jira cost tracking tools spread rates, budgets and reports across many screens and tabs, which makes a simple question (are we over budget?) take several clicks and a lot of patience. Project Cost Tracker puts the whole picture on one project page. Each teammate's hourly cost rate and the project's budget amount are stored in Forge KVS and edited inline, right on the project page. Only users holding the Administer Projects permission for the current project can see or edit the Rates panel (checked server-side against Jira's permissions API); everyone else sees cost totals only, so sensitive rate data stays restricted without a separate admin screen. The app lists worklogs for the current project straight from the Jira REST API and computes cost per user as logged hours times that user's rate, in a single table. Above it, a budget vs actual summary shows total computed cost, budget remaining and percent consumed, with a RAG (red/amber/green) indicator built for a five-second executive read, not a dashboard you need training to use. Two further sortable tables break the same cost down by issue type and by assignee, each with totals, so you can see where budget is actually going without exporting anything to a third-party tool. When you do want the numbers elsewhere, the cost breakdown is also shown as plain CSV text in a labelled read-only block: select it, copy it, paste it into any spreadsheet. Because every worklog read and every cost calculation happens inside Atlassian, with no external egress, Project Cost Tracker is Runs on Atlassian eligible, a data-residency and trust guarantee that matters for finance-sensitive cost data. The app is free to use for teams of up to 10 users at launch.</p>
+
+  <h2>Key Features</h2>
+  <h3>One page for rates, budget and costs</h3>
+  <p>Stop hunting across tabs and reports: set hourly rates, see budget remaining and review the full cost table from a single project screen.</p>
+
+  <h3>Clear RAG status for executives</h3>
+  <p>A single red, amber or green indicator shows budget health at a glance, so finance and leadership get a decision-ready view instead of digging through spreadsheets.</p>
+
+  <h3>Cost data that never leaves Atlassian</h3>
+  <p>Every worklog read and cost calculation runs inside Atlassian, qualifying for Runs on Atlassian, so finance-sensitive cost data never touches an external service.</p>
+
+  <h2>Frequently Asked Questions</h2>
+  <p class="faq-q">Who can set hourly rates and the project budget?</p>
+  <p class="faq-a">Only users with the Administer Projects permission for the current project can open and edit the Rates panel, checked server-side against Jira's permissions API. Everyone else sees cost totals only.</p>
+
+  <p class="faq-q">Does this app send our worklog or cost data outside Atlassian?</p>
+  <p class="faq-a">No. Every worklog read and every cost calculation happens inside Atlassian, which is why the app qualifies for Runs on Atlassian.</p>
+
+  <p class="faq-q">How much does it cost?</p>
+  <p class="faq-a">Free at launch for teams of up to 10 users, with no feature gating during that period.</p>
+
+  <p class="faq-q">Can I export the cost breakdown?</p>
+  <p class="faq-a">Yes. The breakdown is shown as plain CSV text in a labelled read-only block that you can select and copy into any spreadsheet.</p>
+
+  <p class="faq-q">How is cost per user calculated?</p>
+  <p class="faq-a">Cost per user is that user's hourly rate multiplied by the hours they logged on the project, pulled live from Jira worklogs via the REST API.</p>
+
+  <h2>Support</h2>
+  <p>For questions, issues, or feature requests:</p>
+  <ul>
+    <li>Email: <a href="mailto:support@luisivars.pt">support@luisivars.pt</a></li>
+    <li>Hours: Monday to Friday, 9:00 - 18:00 GMT+1</li>
+  </ul>
+
+  <div class="footer">
+    &copy; 2026 Ivars Apps (Luis Ivars Unipessoal Lda). All rights reserved.
+  </div>
+</body>
+</html>
