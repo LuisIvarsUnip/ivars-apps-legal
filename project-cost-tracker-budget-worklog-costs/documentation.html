@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documentation — Project Cost Tracker - Budget &amp; Worklog Costs for Jira</title>
+  <title>Documentation: Project Cost Tracker for Jira</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #172B4D; line-height: 1.7; padding: 40px 20px; max-width: 800px; margin: 0 auto; }
@@ -20,28 +20,69 @@
     .step { background: #F4F5F7; border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
     .faq-q { font-weight: 600; color: #172B4D; margin-top: 16px; }
     .faq-a { color: #42526E; margin-bottom: 16px; }
+    nav.toc { background: #F4F5F7; border-radius: 8px; padding: 12px 20px; margin: 16px 0 8px; font-size: 14px; }
+    nav.toc a { margin-right: 14px; white-space: nowrap; }
+    video, figure img { width: 100%; height: auto; border: 1px solid #DFE1E6; border-radius: 6px; }
+    figure { margin: 20px 0 28px; }
+    figcaption { color: #42526E; font-size: 14px; margin-top: 6px; }
   </style>
 </head>
 <body>
-  <h1>Project Cost Tracker - Budget &amp; Worklog Costs for Jira</h1>
+  <h1>Project Cost Tracker for Jira</h1>
   <p class="meta">User Guide &amp; Documentation</p>
 
   <p>Project Cost Tracker puts rates, budget and the full cost table on one project page in Jira. Set an hourly rate per teammate, set a project budget, and watch budget remaining, percent consumed and a red/amber/green status update automatically from real worklogs, with no separate app sections to hunt through.</p>
+  <nav class="toc"><a href="#getting-started">Getting Started</a> <a href="#video">Demo video</a> <a href="#walkthrough">Walkthrough</a> <a href="#features">Features</a> <a href="#faq">FAQ</a> <a href="#permissions">Permissions and data</a> <a href="#support">Support</a></nav>
 
-  <h2>Overview</h2>
-  <p>Most Jira cost tracking tools spread rates, budgets and reports across many screens and tabs, which makes a simple question (are we over budget?) take several clicks and a lot of patience. Project Cost Tracker puts the whole picture on one project page. Each teammate's hourly cost rate and the project's budget amount are stored in Forge KVS and edited inline, right on the project page. Only users holding the Administer Projects permission for the current project can see or edit the Rates panel (checked server-side against Jira's permissions API); everyone else sees cost totals only, so sensitive rate data stays restricted without a separate admin screen. The app lists worklogs for the current project straight from the Jira REST API and computes cost per user as logged hours times that user's rate, in a single table. Above it, a budget vs actual summary shows total computed cost, budget remaining and percent consumed, with a RAG (red/amber/green) indicator built for a five-second executive read, not a dashboard you need training to use. Two further sortable tables break the same cost down by issue type and by assignee, each with totals, so you can see where budget is actually going without exporting anything to a third-party tool. When you do want the numbers elsewhere, the cost breakdown is also shown as plain CSV text in a labelled read-only block: select it, copy it, paste it into any spreadsheet. Because every worklog read and every cost calculation happens inside Atlassian, with no external egress, Project Cost Tracker is Runs on Atlassian eligible, a data-residency and trust guarantee that matters for finance-sensitive cost data. The app is free to use for teams of up to 10 users at launch.</p>
+  <h2 id="getting-started">Getting Started</h2>
+  <div class="step"><strong>1. Install the app</strong><br>A Jira administrator installs Project Cost Tracker for Jira from the Atlassian Marketplace (Apps, Explore more apps). It runs on Atlassian Forge: there is nothing to host or configure outside Jira.</div>
+  <div class="step"><strong>2. Find it in Jira</strong><br>Open a Jira project and select Project Cost Tracker in the project's navigation (under Apps).</div>
+  <div class="step"><strong>3.</strong> Open your Jira project and select the Project Cost Tracker tab</div>
+  <div class="step"><strong>4.</strong> As a project admin, in Rates and budget enter the project budget and select Save budget</div>
+  <div class="step"><strong>5.</strong> Under Hourly cost rates, enter each contributor rate and select Save rate</div>
+  <div class="step"><strong>6.</strong> Check the budget snapshot with its RAG status and the cost tables by contributor, issue type and assignee</div>
+  <div class="step"><strong>7.</strong> Select and copy the CSV block to paste the cost breakdown into a spreadsheet</div>
 
-  <h2>Key Features</h2>
+  <h2 id="video">Demo video</h2>
+  <video controls preload="metadata" src="media/project-cost-tracker-demo.mp4">Your browser cannot play this video: <a href="media/project-cost-tracker-demo.mp4">download the demo video</a>.</video>
+  <p class="meta">Data shown: a fictional demo project.</p>
+
+  <h2 id="walkthrough">Walkthrough</h2>
+  <figure>
+    <img src="media/step-01.png" alt="Open Project Cost Tracker from the project. The budget snapshot shows cost, remaining budget and the share consumed." loading="lazy">
+    <figcaption>Open Project Cost Tracker from the project. The budget snapshot shows cost, remaining budget and the share consumed.</figcaption>
+  </figure>
+  <figure>
+    <img src="media/step-02.png" alt="Project admins set the budget and an hourly rate for each contributor who logged work." loading="lazy">
+    <figcaption>Project admins set the budget and an hourly rate for each contributor who logged work.</figcaption>
+  </figure>
+  <figure>
+    <img src="media/step-03.png" alt="Costs come from Jira worklogs: hours times rate, by contributor and by issue type." loading="lazy">
+    <figcaption>Costs come from Jira worklogs: hours times rate, by contributor and by issue type.</figcaption>
+  </figure>
+  <figure>
+    <img src="media/step-04.png" alt="Change a rate and save: the totals update from the same worklogs." loading="lazy">
+    <figcaption>Change a rate and save: the totals update from the same worklogs.</figcaption>
+  </figure>
+  <figure>
+    <img src="media/step-05.png" alt="Export the breakdown as CSV text: by user, by issue type and by assignee." loading="lazy">
+    <figcaption>Export the breakdown as CSV text: by user, by issue type and by assignee.</figcaption>
+  </figure>
+
+  <h2 id="overview">Overview</h2>
+  <p>Project Cost Tracker puts the whole picture on one project page. Each teammate's hourly cost rate and the project's budget amount are stored in Forge KVS and edited inline, right on the project page. Only users holding the Administer Projects permission for the current project can see or edit the Rates panel (checked server-side against Jira's permissions API); everyone else sees cost totals only, so sensitive rate data stays restricted without a separate admin screen. The app lists worklogs for the current project straight from the Jira REST API and computes cost per user as logged hours times that user's rate, in a single table. Above it, a budget vs actual summary shows total computed cost, budget remaining and percent consumed, with a RAG (red/amber/green) indicator built for a five-second executive read, not a dashboard you need training to use. Two further sortable tables break the same cost down by issue type and by assignee, each with totals, so you can see where budget is actually going without exporting anything to a third-party tool. When you do want the numbers elsewhere, the cost breakdown is also shown as plain CSV text in a labelled read-only block: select it, copy it, paste it into any spreadsheet. Because every worklog read and every cost calculation happens inside Atlassian, with no external egress, Project Cost Tracker is Runs on Atlassian eligible, a data-residency and trust guarantee that matters for finance-sensitive cost data. The app is free to use for teams of up to 10 users at launch.</p>
+
+  <h2 id="features">Key Features</h2>
   <h3>One page for rates, budget and costs</h3>
   <p>Stop hunting across tabs and reports: set hourly rates, see budget remaining and review the full cost table from a single project screen.</p>
 
   <h3>Clear RAG status for executives</h3>
   <p>A single red, amber or green indicator shows budget health at a glance, so finance and leadership get a decision-ready view instead of digging through spreadsheets.</p>
 
-  <h3>Cost data that never leaves Atlassian</h3>
-  <p>Every worklog read and cost calculation runs inside Atlassian, qualifying for Runs on Atlassian, so finance-sensitive cost data never touches an external service.</p>
+  <h3>Costs by issue type and assignee</h3>
+  <p>Sortable tables break project cost down by issue type and by assignee with totals, and a ready-to-copy CSV block takes the breakdown straight into a spreadsheet.</p>
 
-  <h2>Frequently Asked Questions</h2>
+  <h2 id="faq">Frequently Asked Questions</h2>
   <p class="faq-q">Who can set hourly rates and the project budget?</p>
   <p class="faq-a">Only users with the Administer Projects permission for the current project can open and edit the Rates panel, checked server-side against Jira's permissions API. Everyone else sees cost totals only.</p>
 
@@ -57,7 +98,18 @@
   <p class="faq-q">How is cost per user calculated?</p>
   <p class="faq-a">Cost per user is that user's hourly rate multiplied by the hours they logged on the project, pulled live from Jira worklogs via the REST API.</p>
 
-  <h2>Support</h2>
+  <h2 id="permissions">Permissions and data</h2>
+  <p>The app reads Jira data with the permissions of the person using it, and only:</p>
+  <ul>
+    <li>Jira issues returned by your searches (summary, status, priority, assignee, labels, due dates, issue type)</li>
+    <li>JQL query results you run in the app</li>
+    <li>Jira project metadata (project key, name)</li>
+    <li>Current user identity (display name), used for the app UI</li>
+    <li>App configuration you save (for example saved queries, column layouts or per-project settings), stored in Atlassian Forge Storage (KVS)</li>
+  </ul>
+  <p>Everything runs on Atlassian Forge and no data leaves Atlassian. Details in the <a href="https://luisivarsunip.github.io/ivars-apps-legal/project-cost-tracker-budget-worklog-costs/privacy-policy.html">privacy policy</a>.</p>
+
+  <h2 id="support">Support</h2>
   <p>For questions, issues, or feature requests:</p>
   <ul>
     <li>Email: <a href="mailto:support@luisivars.pt">support@luisivars.pt</a></li>
