@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documentation — Git Sync - Branches, Reports &amp; Automation for Jira</title>
+  <title>Documentation: Git Sync for Jira</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #172B4D; line-height: 1.7; padding: 40px 20px; max-width: 800px; margin: 0 auto; }
@@ -20,18 +20,67 @@
     .step { background: #F4F5F7; border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
     .faq-q { font-weight: 600; color: #172B4D; margin-top: 16px; }
     .faq-a { color: #42526E; margin-bottom: 16px; }
+    nav.toc { background: #F4F5F7; border-radius: 8px; padding: 12px 20px; margin: 16px 0 8px; font-size: 14px; }
+    nav.toc a { margin-right: 14px; white-space: nowrap; }
+    video, figure img { width: 100%; height: auto; border: 1px solid #DFE1E6; border-radius: 6px; }
+    figure { margin: 20px 0 28px; }
+    figcaption { color: #42526E; font-size: 14px; margin-top: 6px; }
   </style>
 </head>
 <body>
-  <h1>Git Sync - Branches, Reports &amp; Automation for Jira</h1>
+  <h1>Git Sync for Jira</h1>
   <p class="meta">User Guide &amp; Documentation</p>
 
-  <p>Git Sync replaces guesswork with a provable system: branch names are generated from the exact naming format you saved for the project, and every branch, commit and PR tied to an issue shows up in a Jira-native report you can filter and export, not a panel that just claims everything is connected.</p>
+  <p>Git Sync for Jira helps your team get more out of Jira.</p>
+  <nav class="toc"><a href="#getting-started">Getting Started</a> <a href="#video">Demo video</a> <a href="#walkthrough">Walkthrough</a> <a href="#features">Features</a> <a href="#faq">FAQ</a> <a href="#permissions">Permissions and data</a> <a href="#support">Support</a></nav>
 
-  <h2>Overview</h2>
-  <p>Many Git integrations for Jira ignore the branch naming format you saved and go quiet when something breaks, leaving you to guess whether a branch, commit or PR is actually linked to an issue. Git Sync is built to fix both problems directly. Naming conventions live in a settings panel: a branch prefix map by issue type, a separator character and a max slug length, all persisted per project in Forge storage. When you generate a branch name for an issue, it is built from that saved template every time, shown ready to select and copy, so the format never drifts between developers or projects. The reporting side lists every issue in the project next to the Git references parsed from a designated Jira field and remote issue links, filterable by status. A per-project activity report (issue key, status, assignee, linked branch count, last updated) is built from live Jira REST v3 reads, sortable by any column, and exportable as CSV. The current release reads from Jira and Forge storage only: no external GitHub connection, no external servers, no external egress. That keeps your settings and issue data inside Atlassian's trust boundary while still giving you reliable, transparent Git visibility on every issue.</p>
+  <h2 id="getting-started">Getting Started</h2>
+  <div class="step"><strong>1. Install the app</strong><br>A Jira administrator installs Git Sync for Jira from the Atlassian Marketplace (Apps, Explore more apps). It runs on Atlassian Forge: there is nothing to host or configure outside Jira.</div>
+  <div class="step"><strong>2. Find it in Jira</strong><br>Open a Jira project and select Git Sync in the project's navigation (under Apps).</div>
+  <div class="step"><strong>3.</strong> Open your Jira project and select the Git Sync tab</div>
+  <div class="step"><strong>4.</strong> In Conventions, set the branch prefix for each issue type, the separator and the max slug length, then save</div>
+  <div class="step"><strong>5.</strong> In Branch name, enter an issue key and select Generate, then copy the branch name shown</div>
+  <div class="step"><strong>6.</strong> Link branches, commits and pull requests to issues as remote issue links, or pick a Jira field that holds Git URLs in Conventions</div>
+  <div class="step"><strong>7.</strong> Open Git references to see every reference per issue, and Activity report to filter by status, sort by any column and export CSV</div>
 
-  <h2>Key Features</h2>
+  <h2 id="video">Demo video</h2>
+  <video controls preload="metadata" src="media/git-sync-demo.mp4">Your browser cannot play this video: <a href="media/git-sync-demo.mp4">download the demo video</a>.</video>
+  <p class="meta">Data shown: a fictional demo project.</p>
+
+  <h2 id="walkthrough">Walkthrough</h2>
+  <figure>
+    <img src="media/step-01.png" alt="Open Git Sync from the project. The Branch name tab builds names from your saved template." loading="lazy">
+    <figcaption>Open Git Sync from the project. The Branch name tab builds names from your saved template.</figcaption>
+  </figure>
+  <figure>
+    <img src="media/step-02.png" alt="Type an issue key, for example DEMO-12, and select Generate." loading="lazy">
+    <figcaption>Type an issue key, for example DEMO-12, and select Generate.</figcaption>
+  </figure>
+  <figure>
+    <img src="media/step-03.png" alt="The branch name follows your convention: prefix by issue type, key and a short slug. Select it and copy." loading="lazy">
+    <figcaption>The branch name follows your convention: prefix by issue type, key and a short slug. Select it and copy.</figcaption>
+  </figure>
+  <figure>
+    <img src="media/step-04.png" alt="Conventions: set the template, separator, slug length and a prefix for each issue type, once per project." loading="lazy">
+    <figcaption>Conventions: set the template, separator, slug length and a prefix for each issue type, once per project.</figcaption>
+  </figure>
+  <figure>
+    <img src="media/step-05.png" alt="Git references: see the branches and commits linked to each issue, filtered by status." loading="lazy">
+    <figcaption>Git references: see the branches and commits linked to each issue, filtered by status.</figcaption>
+  </figure>
+  <figure>
+    <img src="media/step-06.png" alt="Activity report: issues, assignees and linked branches in one sortable table." loading="lazy">
+    <figcaption>Activity report: issues, assignees and linked branches in one sortable table.</figcaption>
+  </figure>
+  <figure>
+    <img src="media/step-07.png" alt="Export the report as CSV text, ready to paste into a spreadsheet." loading="lazy">
+    <figcaption>Export the report as CSV text, ready to paste into a spreadsheet.</figcaption>
+  </figure>
+
+  <h2 id="overview">Overview</h2>
+  <p>Naming conventions live in a settings panel: a branch prefix map by issue type, a separator character and a max slug length, all persisted per project in Forge storage. When you generate a branch name for an issue, it is built from that saved template every time, shown ready to select and copy, so the format never drifts between developers or projects. The reporting side lists every issue in the project next to the Git references parsed from a designated Jira field and remote issue links, filterable by status. A per-project activity report (issue key, status, assignee, linked branch count, last updated) is built from live Jira REST v3 reads, sortable by any column, and exportable as CSV. The current release reads from Jira and Forge storage only: no external GitHub connection, no external servers, no external egress. That keeps your settings and issue data inside Atlassian's trust boundary while still giving you reliable, transparent Git visibility on every issue.</p>
+
+  <h2 id="features">Key Features</h2>
   <h3>Branch names that always match your format</h3>
   <p>Every branch name is generated from the per-project template you saved in settings, prefix, separator and slug length included, so developers never have to manually fix an inconsistent branch name again.</p>
 
@@ -41,7 +90,7 @@
   <h3>Filter, sort and export your Git activity</h3>
   <p>Filter the issue list by status, sort the activity report by any column, and export it as CSV for standups, audits or sharing outside Jira without rebuilding the data by hand.</p>
 
-  <h2>Frequently Asked Questions</h2>
+  <h2 id="faq">Frequently Asked Questions</h2>
   <p class="faq-q">Does Git Sync need to connect to GitHub or another Git host?</p>
   <p class="faq-a">No, the current release reads only from Jira REST v3 and Forge storage. Branch, commit and PR references are parsed from a designated Jira field and remote issue links, with no external connection required.</p>
 
@@ -57,7 +106,18 @@
   <p class="faq-q">Is my naming configuration stored outside Jira?</p>
   <p class="faq-a">No, per-project naming conventions are stored in Forge KVS, which lives inside Atlassian's infrastructure alongside your Jira data.</p>
 
-  <h2>Support</h2>
+  <h2 id="permissions">Permissions and data</h2>
+  <p>The app reads Jira data with the permissions of the person using it, and only:</p>
+  <ul>
+    <li>Jira issues returned by your searches (summary, status, priority, assignee, labels, due dates, issue type)</li>
+    <li>JQL query results you run in the app</li>
+    <li>Jira project metadata (project key, name)</li>
+    <li>Current user identity (display name), used for the app UI</li>
+    <li>App configuration you save (for example saved queries, column layouts or per-project settings), stored in Atlassian Forge Storage (KVS)</li>
+  </ul>
+  <p>Everything runs on Atlassian Forge and no data leaves Atlassian. Details in the <a href="https://luisivarsunip.github.io/ivars-apps-legal/git-sync-branches-reports-automation/privacy-policy.html">privacy policy</a>.</p>
+
+  <h2 id="support">Support</h2>
   <p>For questions, issues, or feature requests:</p>
   <ul>
     <li>Email: <a href="mailto:support@luisivars.pt">support@luisivars.pt</a></li>
