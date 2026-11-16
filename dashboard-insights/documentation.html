@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documentation — Dashboard Insights for Jira</title>
+  <title>Documentation: Dashboard Insights for Jira</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #172B4D; line-height: 1.7; padding: 40px 20px; max-width: 800px; margin: 0 auto; }
@@ -20,58 +20,98 @@
     .step { background: #F4F5F7; border-radius: 8px; padding: 16px 20px; margin: 12px 0; }
     .faq-q { font-weight: 600; color: #172B4D; margin-top: 16px; }
     .faq-a { color: #42526E; margin-bottom: 16px; }
+    nav.toc { background: #F4F5F7; border-radius: 8px; padding: 12px 20px; margin: 16px 0 8px; font-size: 14px; }
+    nav.toc a { margin-right: 14px; white-space: nowrap; }
+    video, figure img { width: 100%; height: auto; border: 1px solid #DFE1E6; border-radius: 6px; }
+    figure { margin: 20px 0 28px; }
+    figcaption { color: #42526E; font-size: 14px; margin-top: 6px; }
   </style>
 </head>
 <body>
   <h1>Dashboard Insights for Jira</h1>
   <p class="meta">User Guide &amp; Documentation</p>
 
-  <p>Dashboard gadgets for teams who want real Jira data, not a stripped-down summary — rendered fast and computed entirely inside Atlassian. Chart any saved JQL, track Agile flow metrics straight from the issue changelog, and get changelog-accurate Time in Status without waiting on an external service to respond.</p>
+  <p>Dashboard Insights turns your Jira dashboards into a reporting hub, with native charts, agile flow metrics and time in status computed entirely inside Atlassian. Point the gadget at any JQL query using the real Jira editor, then chart your issues as column, bar, pie, line or area, grouped and segmented by any field.</p>
+  <nav class="toc"><a href="#getting-started">Getting Started</a> <a href="#walkthrough">Walkthrough</a> <a href="#features">Features</a> <a href="#faq">FAQ</a> <a href="#permissions">Permissions and data</a> <a href="#support">Support</a></nav>
 
-  <h2>Overview</h2>
-  <p>Dashboards for Jira is a native gadget library for the Jira dashboard — not a separate reporting app. Each gadget is configured in standard gadget edit mode and computed live from your JQL.
+  <h2 id="getting-started">Getting Started</h2>
+  <div class="step"><strong>1. Install the app</strong><br>A Jira administrator installs Dashboard Insights for Jira from the Atlassian Marketplace (Apps, Explore more apps). It runs on Atlassian Forge: there is nothing to host or configure outside Jira.</div>
+  <div class="step"><strong>2. Find it in Jira</strong><br>Open a Jira dashboard, select Edit, then add the Dashboard Insights gadget and pick the project it reports on.</div>
+  <div class="step"><strong>3.</strong> In the gadget, open the Config tab and type a JQL query in the Jira editor, for example project = ABC (or pick a saved filter), then press Enter to apply it</div>
+  <div class="step"><strong>4.</strong> Choose the chart type, the field to group by and, if you want, a field to segment by, then select Save</div>
+  <div class="step"><strong>5.</strong> Open Charts to see the chart, Agile flow for velocity, burndown, burnup and cumulative flow, and Time in status for lead and cycle time</div>
+  <div class="step"><strong>6.</strong> Open Export, choose CSV for the data or PNG for the chart image, and select Export</div>
 
-Chart library: bar, column, stacked, pie/donut, line, area, and pivot/two-dimensional tables, each driven by a saved filter or JQL.
+  <h2 id="walkthrough">Walkthrough</h2>
+  <figure>
+    <img src="media/step-01.png" alt="Config: point the gadget at any JQL query with the Jira editor, then choose the chart type and the fields to group and segment by." loading="lazy">
+    <figcaption>Config: point the gadget at any JQL query with the Jira editor, then choose the chart type and the fields to group and segment by.</figcaption>
+  </figure>
+  <figure>
+    <img src="media/step-02.png" alt="Charts: the query drawn as a column chart, here the issues of a demo project grouped by status. Bar, pie, line and area work the same way." loading="lazy">
+    <figcaption>Charts: the query drawn as a column chart, here the issues of a demo project grouped by status. Bar, pie, line and area work the same way.</figcaption>
+  </figure>
+  <figure>
+    <img src="media/step-03.png" alt="Agile flow: sprint velocity, committed versus completed, read from the issue changelog. The Type menu switches to burndown, burnup and cumulative flow." loading="lazy">
+    <figcaption>Agile flow: sprint velocity, committed versus completed, read from the issue changelog. The Type menu switches to burndown, burnup and cumulative flow.</figcaption>
+  </figure>
+  <figure>
+    <img src="media/step-04.png" alt="Time in status: lead time, cycle time and the hours spent in each status for the issues in your query." loading="lazy">
+    <figcaption>Time in status: lead time, cycle time and the hours spent in each status for the issues in your query.</figcaption>
+  </figure>
+  <figure>
+    <img src="media/step-05.png" alt="Export: download the data as CSV or the chart as a PNG image." loading="lazy">
+    <figcaption>Export: download the data as CSV or the chart as a PNG image.</figcaption>
+  </figure>
 
-Agile flow, computed in Forge from the issue changelog and the Agile v1 API: burndown, burnup, cumulative flow diagram (CFD), velocity, and control chart.
+  <h2 id="overview">Overview</h2>
+  <p>Dashboard Insights is a gadget for the Jira dashboard, not a separate reporting app. You add it to a dashboard, point it at a JQL query or a saved filter, and it draws the chart from your live issues.</p>
+  <p>Charts: column, bar, pie, line and area charts from any JQL query, grouped by any field and optionally segmented by a second field. Each gadget on a dashboard keeps its own query and settings.</p>
+  <p>Agile flow: sprint velocity (committed versus completed), burndown, burnup and cumulative flow, read from the issue changelog of your own boards.</p>
+  <p>Time in status: how long work sits in each status, with changelog-accurate lead time and cycle time and a per-issue hours breakdown, so bottlenecks are easy to spot.</p>
+  <p>Everything runs on Atlassian Forge with minimal scopes and no external egress, which keeps the app eligible for the Runs on Atlassian program: your Jira data never leaves the platform. Works with company-managed and team-managed projects on Jira Cloud. Language support: English.</p>
 
-Time in Status: per-issue and aggregate time-in-status, cycle time, and lead time derived from the changelog, with working-calendar (business hours) support so off-hours don't count toward the total.
+  <h2 id="features">Key Features</h2>
+  <h3>Custom charts for Jira dashboards</h3>
+  <p>Build column, bar, pie, line and area charts from any JQL query, grouped and segmented by any field, as gadgets on your Jira dashboards.</p>
 
-Config panel: a React-based settings screen with a saved JQL/filter picker, grouping and segmentation field, date range, and color theming. Settings persist per gadget via Forge storage.
+  <h3>Agile reports: velocity, burndown, burnup and cumulative flow</h3>
+  <p>Track sprint velocity (committed versus completed), burndown, burnup and cumulative flow straight from your boards, read from the issue changelog, without leaving the dashboard.</p>
 
-Live refresh against Jira REST v3 and Agile v1, backed by a short-TTL result cache so gadgets render fast instead of re-querying on every dashboard load.
+  <h3>Time in status, lead time and cycle time</h3>
+  <p>Measure how long work sits in each status, with changelog-accurate lead and cycle time and a per-issue hours breakdown.</p>
 
-Export: send a single chart to PNG or PDF, or export the underlying data set to CSV.
+  <h3>Your data stays inside Atlassian</h3>
+  <p>Every chart is computed on Atlassian Forge. There is no external server, no API key and no data pipeline to explain in a security review.</p>
 
-Runs on Atlassian: 100% in-platform computation with zero external egress — every chart and metric stays inside your Atlassian cloud, which is what a security-reviewed enterprise buyer is checking for.</p>
-
-  <h2>Key Features</h2>
-  <h3>Dashboards that load, not spin</h3>
-  <p>A short-TTL Forge KVS cache and metrics-instrumented gadgets mean charts paint on first load instead of stalling while data comes in — no more waiting for a dashboard to catch up before a standup or review.</p>
-
-  <h3>Pass security review without extra questions</h3>
-  <p>Every chart, the Time in Status changelog crunching, and the result cache run inside Atlassian's Forge runtime — there's no external server, API key, or data pipeline to explain to your security team, and the Runs on Atlassian badge documents that for procurement.</p>
-
-  <h3>Cycle-time numbers you can defend in a retro</h3>
-  <p>Time in Status, cycle time, and lead time are calculated straight from the issue changelog, with optional working-calendar support, so a weekend doesn't inflate a 3-day 'In Progress' stint — the CFD, control chart, and velocity gadgets reuse the same data, so the numbers agree with each other.</p>
-
-  <h2>Frequently Asked Questions</h2>
+  <h2 id="faq">Frequently Asked Questions</h2>
   <p class="faq-q">Does any of my Jira data leave Atlassian?</p>
-  <p class="faq-a">No. Every chart, the Time in Status changelog crunching, and the result cache run inside Forge on Atlassian's infrastructure — there's no external server or API endpoint for your data to pass through.</p>
+  <p class="faq-a">No. Every chart, the time in status calculation and the short result cache run inside Forge on Atlassian infrastructure. The app has no external server and makes no external network calls.</p>
 
-  <p class="faq-q">How is Time in Status different from just reading status change history?</p>
-  <p class="faq-a">It aggregates the changelog into per-issue and per-group time-in-status, cycle time, and lead time, with an optional working-calendar setting so nights and weekends don't count toward the total.</p>
+  <p class="faq-q">Can I have several gadgets with different queries on one dashboard?</p>
+  <p class="faq-a">Yes. Each gadget keeps its own JQL query, chart type and settings, so one dashboard can show several charts side by side.</p>
 
-  <p class="faq-q">Will the gadgets work with my saved filters and JQL?</p>
-  <p class="faq-a">Yes — each gadget's config panel has a saved filter/JQL picker plus grouping and date-range controls, and the settings persist per gadget via Forge storage.</p>
+  <p class="faq-q">The chart says no issues match. What should I check?</p>
+  <p class="faq-a">Open the Config tab and check the JQL query. After typing a query, press Enter in the editor so it is applied, then select Save. The query must return issues you have permission to see.</p>
 
-  <p class="faq-q">Can I get data out of a gadget, not just view it on a dashboard?</p>
-  <p class="faq-a">Yes, each chart can be exported to PNG or PDF, and its underlying data set can be exported to CSV.</p>
+  <p class="faq-q">Where do the agile and time in status numbers come from?</p>
+  <p class="faq-a">From the Jira issue changelog of the issues your query returns: sprint changes for velocity and burndown, and status changes for time in status, lead time and cycle time.</p>
 
-  <p class="faq-q">What's the pricing model?</p>
-  <p class="faq-a">Pricing model: Free up to 10 users, per-user pricing from 11 users, billed via Atlassian, 30-day trial.</p>
+  <p class="faq-q">Which Jira projects does it work with?</p>
+  <p class="faq-a">Company-managed and team-managed projects on Jira Cloud. You only see issues you already have permission to see in Jira.</p>
 
-  <h2>Support</h2>
+  <h2 id="permissions">Permissions and data</h2>
+  <p>The app reads Jira data with the permissions of the person using it, and only:</p>
+  <ul>
+    <li>Jira issues returned by your searches (summary, status, priority, assignee, labels, due dates, issue type)</li>
+    <li>JQL query results you run in the app</li>
+    <li>Jira project metadata (project key, name)</li>
+    <li>Current user identity (display name), used for the app UI</li>
+    <li>App configuration you save (for example saved queries, column layouts or per-project settings), stored in Atlassian Forge Storage (KVS)</li>
+  </ul>
+  <p>Everything runs on Atlassian Forge and no data leaves Atlassian. Details in the <a href="https://luisivarsunip.github.io/ivars-apps-legal/dashboard-insights/privacy-policy.html">privacy policy</a>.</p>
+
+  <h2 id="support">Support</h2>
   <p>For questions, issues, or feature requests:</p>
   <ul>
     <li>Email: <a href="mailto:support@luisivars.pt">support@luisivars.pt</a></li>
